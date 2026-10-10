@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>StockLab</title>
+
+    <style>
+        body {
+            background-color: #dbdee4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-family: Arial;
+            padding-top: 80px;
+        }
+
+        button {
+            padding: 12px 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>NVIDIA Valuation Model</h1>
+    <p>My first stock valuation calculator</p>
+
+    <p>EPS:</p>
+    <input type="number" id="eps" value="10">  
+
+    <p>PE Ratio:</p>
+    <input type="number" id="pe" value="40">
+    
+    <p>EPS Growth Rate (%):</p>
+    <input type="number" id="growth" value="20">
+    
+    <p>
+        <button onclick="calculate()">Calculate</button>
+    </p>
+
+    <h2 id="result">Waiting for calculation...</h2>
+
+    <script>
+        
+    function calculate() {
+    const eps = Number(document.getElementById("eps").value);
+    const pe = Number(document.getElementById("pe").value);
+
+    const price = eps * pe;
+
+    document.getElementById("result").textContent =
+        "Estimated Price: $" + price.toFixed(2);
+}
+
+    </script>
+</body>
+</html>
